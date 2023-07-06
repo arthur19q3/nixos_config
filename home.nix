@@ -3,10 +3,16 @@
 { config, pkgs, ... }:
 
 {
+  # init info
   home.username = "arthur19q3";
   home.homeDirectory = "/home/arthur19q3";
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;
+
+  # Packages that should be installed to the user profile.
+  # empty
+
+  # Programme settings
   programs.git = {
       enable = true;
       userName  = "arthur19q3";
