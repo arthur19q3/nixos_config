@@ -1,7 +1,6 @@
 # home.nix
 
 { config, pkgs, ... }:
-
 {
   # init info
   home.username = "arthur19q3";

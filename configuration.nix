@@ -285,8 +285,16 @@
   yarn
   zoxide
   ];
+  # packages from unstable channel
+  environment.systemPackages =
+    let
+      unstable = import (builtins.fetchTarball "channel:nixos-unstable") { config = config.nixpkgs.config; };
+    in
+      [rustc];
 
+  # system version state
   system.stateVersion = "23.05"; # Did you read the comment?
+  # Cargo repo change
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
   # Home Manger
   home-manager.useGlobalPkgs = true;
