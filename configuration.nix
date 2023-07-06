@@ -260,6 +260,7 @@ in
   environment.systemPackages = with pkgs; [
   alacritty
   bat
+  blender
   bottom
   broot
   unstable.cargo
@@ -273,7 +274,8 @@ in
   fd
   fcitx5
   fish
-  flatpak
+  flatpak.
+  gcc
   git
   gnome.gnome-tweaks
   go
@@ -290,6 +292,7 @@ in
   neofetch
   netease-cloud-music-gtk
   nushell
+  pkg-config
   python3
   redis
   ripgrep
