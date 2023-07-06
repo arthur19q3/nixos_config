@@ -263,7 +263,7 @@ in
   blender
   bottom
   broot
-  unstable.cargo
+  cargo
   gcc
   clickhouse
   clickhouse-cli
@@ -278,6 +278,7 @@ in
   flatpak
   git
   gcc13
+  gccgo13
   gnome.gnome-tweaks
   go
   google-chrome
@@ -300,7 +301,8 @@ in
   ripgrep
   rocm-core
   rocm-smi
-  unstable.rustc
+  rustc
+  rustup
   starship
   tmux
   tokei
