@@ -287,5 +287,8 @@
 
   system.stateVersion = "23.05"; # Did you read the comment?
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+ # Home Manger
+  home-manager.useGlobalPkgs = true;
+
 
 }

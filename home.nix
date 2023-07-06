@@ -12,7 +12,6 @@
       userName  = "arthur19q3";
       userEmail = "theartoforz@gmail.com";
     };
-   home-manager.useGlobalPkgs = true;
    home.file.".cargo/config.toml".text = ''
        [source.crates-io]
        replace-with = 'sjtu'
