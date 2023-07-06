@@ -19,50 +19,52 @@
 | Memory | 6652MiB / 31918MiB |
 
 # Package List
-  alacritty
-  bat
-  bottom
-  broot
-  cargo
-  clickhouse
-  clickhouse-cli
-  clash
-  clash-verge
-  discord
-  electron
-  exa
-  fd
-  fcitx5
-  fish
-  flatpak
-  git
-  gnome.gnome-tweaks
-  go
-  google-chrome
-  gst_all_1.gstreamer
-  home-manager
-  htop
-  jetbrains.clion
-  jetbrains.goland
-  jetbrains.pycharm-professional
-  kodi
-  mattermost-desktop
-  micro
-  neofetch
-  netease-cloud-music-gtk
-  nushell
-  python3
-  redis
-  ripgrep
-  rocm-core
-  rocm-smi
-  rustc
-  starship
-  tmux
-  tokei
-  vscode
-  wl-clipboard
-  wpsoffice
-  xcp
-  yarn
-  zoxide
+| Package                      |
+| ---------------------------- |
+| alacritty                    |
+| bat                          |
+| bottom                       |
+| broot                        |
+| cargo                        |
+| clickhouse                   |
+| clickhouse-cli               |
+| clash                        |
+| clash-verge                  |
+| discord                      |
+| electron                     |
+| exa                          |
+| fd                           |
+| fcitx5                       |
+| fish                         |
+| flatpak                      |
+| git                          |
+| gnome.gnome-tweaks           |
+| go                           |
+| google-chrome                |
+| gst_all_1.gstreamer          |
+| home-manager                 |
+| htop                         |
+| jetbrains.clion              |
+| jetbrains.goland             |
+| jetbrains.pycharm-professional |
+| kodi                         |
+| mattermost-desktop           |
+| micro                        |
+| neofetch                     |
+| netease-cloud-music-gtk      |
+| nushell                      |
+| python3                      |
+| redis                        |
+| ripgrep                      |
+| rocm-core                    |
+| rocm-smi                     |
+| rustc                        |
+| starship                     |
+| tmux                         |
+| tokei                        |
+| vscode                       |
+| wl-clipboard                 |
+| wpsoffice                    |
+| xcp                          |
+| yarn                         |
+| zoxide                       |
