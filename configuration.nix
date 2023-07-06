@@ -260,6 +260,7 @@ in
   environment.systemPackages = with pkgs; [
   alacritty
   bat
+  blender
   bottom
   broot
   unstable.cargo
@@ -292,6 +293,8 @@ in
   neofetch
   netease-cloud-music-gtk
   nushell
+  openssl
+  pkg-config
   python3
   redis
   ripgrep
