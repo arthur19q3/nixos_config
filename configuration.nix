@@ -122,6 +122,17 @@
  
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Disable Passwd for sudo
+  security.sudo.extraRules= [
+      {
+        users = [ "arthur19q3" ];
+        commands = [
+          { command = "ALL" ;
+            options= [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
 
   # Enable sound with pipewire.
   sound.enable = true;
