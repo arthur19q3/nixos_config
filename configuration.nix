@@ -1,11 +1,9 @@
 
 { config, pkgs, ... }:
 {
-
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      # ./home.nix
     ];
 
   # Bootloader.
@@ -170,8 +168,24 @@
   programs.xwayland.enable = true;
   programs.clash-verge.enable = true;
   programs.clash-verge.autoStart = true;
-  programs.fish.enable = true;  
+    programs.fish ={
+        # this is for root user
+        enable = true;
+        shellAliases = {
+        rm = "rm -i";
+        cp = "xcp";
+        mv = "mv -i";
+        mkdir = "mkdir -p";
+        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos/#arthur19q3";
+        clean = "sudo nix-collect-garbage -d";
+        ls = "exa -l";
+        bkup = "xcp /etc/nixos/configuration.nix /opt/";
+        config="sudo micro /etc/nixos/configuration.nix";
+        c = "clear";
+    };
+  };
   programs.starship.interactiveOnly = false;
+  programs.starship.enable = true;
   #programs.clash-verge.autoStart = true;
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -275,4 +289,3 @@
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 
 }
-
