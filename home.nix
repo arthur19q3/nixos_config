@@ -24,10 +24,5 @@
     enable = true;
     # Add specific configuration options for Cargo here
   };
-
-  # Other configurations...
-  home-manager.users.arthur19q3.environment={
-    #
-  };
 }
 
