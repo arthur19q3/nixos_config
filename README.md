@@ -1,21 +1,22 @@
 # Working Specs
 
-Host: Gigabyte Technology Co., Ltd. Z390 UD
-Kernel: 6.1.37
-Uptime: 3 hours, 52 mins
-Packages: 1288 (nix-system), 582 (nix-user)
-Shell: fish 3.6.1
-Resolution: 1920x1080, 3840x2160
-DE: GNOME 44.2 (Wayland)
-WM: Mutter
-WM Theme: Adwaita
-Theme: Adwaita [GTK2/3]
-Icons: Adwaita [GTK2/3]
-Terminal: alacritty
-CPU: Intel i7-9700K (8) @ 4.900GHz
-GPU: AMD ATI Radeon RX 6700/6700 XT/6750 XT / 6800M/6850M XT
-Memory: 6652MiB / 31918MiB
-
+| Host | Gigabyte Technology Co., Ltd. Z390 UD |
+| --- | --- |
+| Kernel | 6.1.37 |
+| Uptime | 3 hours, 52 mins |
+| Packages (nix-system) | 1288 |
+| Packages (nix-user) | 582 |
+| Shell | fish 3.6.1 |
+| Resolution | 1920x1080, 3840x2160 |
+| DE | GNOME 44.2 (Wayland) |
+| WM | Mutter |
+| WM Theme | Adwaita |
+| Theme | Adwaita [GTK2/3] |
+| Icons | Adwaita [GTK2/3] |
+| Terminal | alacritty |
+| CPU | Intel i7-9700K (8) @ 4.900GHz |
+| GPU | AMD ATI Radeon RX 6700/6700 XT/6750 XT / 6800M/6850M XT |
+| Memory | 6652MiB / 31918MiB |
 
 # Package List
   alacritty
