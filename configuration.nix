@@ -1,5 +1,12 @@
 
 { config, pkgs, ... }:
+
+ # unstable derivative
+  let
+    unstableTarball =
+      fetchTarball
+        https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+in
 {
   imports =
     [
@@ -25,7 +32,12 @@
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    networking = {
+      proxy = {
+        httpProxy = "http://127.0.0.1:7890";
+        httpsProxy = "http://127.0.0.1:7890";
+      };
+    };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -224,6 +236,15 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Allow unstable
+  nixpkgs.config = {
+      packageOverrides = pkgs: {
+        unstable = import unstableTarball {
+          config = config.nixpkgs.config;
+        };
+      };
+    };
+
   # To turn on automatic optimisation for newer derivations
   nix.settings.auto-optimise-store = true;
 
@@ -241,7 +262,7 @@
   bat
   bottom
   broot
-  cargo
+  unstable.cargo
   clickhouse
   clickhouse-cli
   clash
@@ -274,7 +295,7 @@
   ripgrep
   rocm-core
   rocm-smi
-  rustc
+  unstable.rustc
   starship
   tmux
   tokei
@@ -285,12 +306,7 @@
   yarn
   zoxide
   ];
-  # packages from unstable channel
-  environment.systemPackages =
-    let
-      unstable = import (builtins.fetchTarball "channel:nixos-unstable") { config = config.nixpkgs.config; };
-    in
-      [rustc];
+
 
   # system version state
   system.stateVersion = "23.05"; # Did you read the comment?
