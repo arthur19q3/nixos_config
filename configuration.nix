@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ config, lib,pkgs, ... }:
 
  # unstable derivative
   let
@@ -155,6 +155,8 @@ in
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      flatpak
+      gnome.gnome-software
       thunderbird
     ];
   };
@@ -182,24 +184,25 @@ in
   };
   programs.starship.interactiveOnly = false;
   programs.starship.enable = true;
+  programs.fish.shellInit = lib.mkAfter "zoxide init fish | source";
   #programs.clash-verge.autoStart = true;
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "arthur19q3";
   # enable flatpak
   services.flatpak.enable = true;
-  users.users.myflatpakuser = {
-    group = "myflatpakuser";
-    packages = with pkgs; [
-      flatpak
-      gnome.gnome-software
-    ];
-    isNormalUser = true;
-  };
-  users.groups.myflatpakuser = {};
+  # users.groups.myflatpakuser = {};
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  # Redis Server
+  services.redis.servers = {
+    redis-server = {
+      enable = true;
+      port =6379;
+    };
+  };
 
   # HIP
 
