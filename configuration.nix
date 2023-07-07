@@ -293,6 +293,7 @@ in
   wl-clipboard
   wpsoffice
   xcp
+  xmind
   yarn
   zoxide
   ];
