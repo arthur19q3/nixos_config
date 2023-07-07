@@ -27,42 +27,27 @@ in
             url = "https://nixos.org/logo/nixos-hires.png";
             sha256 = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
           };
+  boot.plymouth.font = "${pkgs.dejavu_fonts.minimal}/share/fonts/truetype/DejaVuSans.ttf";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
-    networking = {
-      proxy = {
-        httpProxy = "http://127.0.0.1:7890";
-        httpsProxy = "http://127.0.0.1:7890";
-      };
-    };
-
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.inputMethod = {
-  enabled = "fcitx5";
-  fcitx5.addons = with pkgs; [
-  fcitx5-rime
-  fcitx5-mozc
-  fcitx5-gtk
-  fcitx5-chinese-addons fcitx5-table-extra
-  ];
+  # use ibus now. fcitx5 is down
+    i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+      rime
+    ];
   };
-
-   nixpkgs.overlays = [
-    (self: super: {
-      fcitx-engines = pkgs.fcitx5;
-    })
-  ];
-   
+  
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
@@ -264,7 +249,6 @@ in
   bottom
   broot
   cargo
-  gcc
   clickhouse
   clickhouse-cli
   clash
@@ -279,6 +263,7 @@ in
   git
   gcc13
   gccgo13
+  glibc
   gnome.gnome-tweaks
   go
   google-chrome
@@ -288,14 +273,13 @@ in
   jetbrains.clion
   jetbrains.goland
   jetbrains.pycharm-professional
+  joplin-desktop
   kodi
   mattermost-desktop
   micro
   neofetch
   netease-cloud-music-gtk
   nushell
-  openssl
-  pkg-config
   python3
   redis
   ripgrep
@@ -303,6 +287,7 @@ in
   rocm-smi
   rustc
   rustup
+  rustfmt
   starship
   tmux
   tokei
@@ -317,7 +302,7 @@ in
 
   # system version state
   system.stateVersion = "23.05"; # Did you read the comment?
-  # Cargo repo change
+  # nix repo change
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
   # Home Manger
   home-manager.useGlobalPkgs = true;
