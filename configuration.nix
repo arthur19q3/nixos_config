@@ -255,13 +255,27 @@ in
   clash
   clash-verge
   discord
+  dragonflydb
   electron
+  epson-escpr
   exa
   fd
   fcitx5
   fish
   flatpak
+  fzf
+  fishPlugins.forgit
+  tmuxPlugins.tmux-fzf
+  fishPlugins.fzf
+  fishPlugins.done
+  fishPlugins.pure
+  fishPlugins.sponge
+  fishPlugins.autopair
+  any-nix-shell
+  ibus-engines.table-chinese
+  libpinyin
   git
+  gitlab
   gcc13
   gccgo13
   glibc
@@ -281,6 +295,13 @@ in
   neofetch
   netease-cloud-music-gtk
   nushell
+  neovim
+  nixfmt
+  nixos-option
+  nixos-grub2-theme
+  neovim-gtk
+  neovide
+  vimPlugins.coc-rust-analyzer
   python3
   redis
   ripgrep
