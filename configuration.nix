@@ -39,7 +39,7 @@ in
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # use ibus now. fcitx5 is down
+  # use ibus now.
     i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [
@@ -112,7 +112,9 @@ in
     layout = "us";
     xkbVariant = "";
   };
-  services.clickhouse.enable = true;
+
+  # Enable clickhouse
+  # services.clickhouse.enable = true;
  
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -189,20 +191,23 @@ in
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "arthur19q3";
-  # enable flatpak
-  services.flatpak.enable = true;
-  # users.groups.myflatpakuser = {};
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+  # Enable neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+  # enable flatpak
+  services.flatpak.enable = true;
 
   # Redis Server
-  services.redis.servers = {
-    redis-server = {
-      enable = true;
-      port =6379;
-    };
-  };
+    #  services.redis.servers = {
+    #    redis-server = {
+    #      enable = true;
+    #      port =6379;
+    #    };
+    #  };
 
   # HIP
 
@@ -250,17 +255,16 @@ in
   bottom
   broot
   cargo
-  clickhouse
-  clickhouse-cli
   clash
   clash-verge
   discord
-  dragonflydb
+  docker
+  docker-compose
+#  dragonflydb
   electron
   epson-escpr
   exa
   fd
-  fcitx5
   fish
   flatpak
   fzf
@@ -268,12 +272,13 @@ in
   tmuxPlugins.tmux-fzf
   fishPlugins.fzf
   fishPlugins.done
-  fishPlugins.pure
   fishPlugins.sponge
   fishPlugins.autopair
   any-nix-shell
+  ibus
   ibus-engines.table-chinese
   libpinyin
+  libtorch-bin
   git
   gitlab
   gcc13
@@ -302,6 +307,10 @@ in
   neovim-gtk
   neovide
   vimPlugins.coc-rust-analyzer
+  pods
+  podman
+  podman-compose
+  podman-desktop
   python3
   redis
   ripgrep
