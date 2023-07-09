@@ -337,7 +337,7 @@ in
   # system version state
   system.stateVersion = "23.05"; # Did you read the comment?
   # nix repo change
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+  nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
   # Home Manger
   home-manager.useGlobalPkgs = true;
 
