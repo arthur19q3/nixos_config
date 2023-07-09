@@ -255,6 +255,8 @@ in
   bottom
   broot
   cargo
+#  clickhouse
+#  clickhouse-cli
   clash
   clash-verge
   discord
@@ -262,6 +264,7 @@ in
   docker-compose
 #  dragonflydb
   electron
+  element-desktop
   epson-escpr
   exa
   fd
