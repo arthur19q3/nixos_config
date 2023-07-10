@@ -202,12 +202,12 @@ in
   services.flatpak.enable = true;
 
   # Redis Server
-    #  services.redis.servers = {
-    #    redis-server = {
-    #      enable = true;
-    #      port =6379;
-    #    };
-    #  };
+      services.redis.servers = {
+        redis-server = {
+          enable = true;
+          port =6379;
+        };
+      };
 
   # HIP
 
