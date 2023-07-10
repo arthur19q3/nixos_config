@@ -206,6 +206,7 @@ in
         redis-server = {
           enable = true;
           port =6379;
+          requirePass="the17th";
         };
       };
 
