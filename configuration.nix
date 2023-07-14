@@ -1,4 +1,3 @@
-
 { config, lib,pkgs, ... }:
 
  # unstable derivative
@@ -39,6 +38,9 @@ in
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
+  # default locale
+  i18n.defaultLocale = "en_US.UTF-8";
+
   # use ibus now.
     i18n.inputMethod = {
     enabled = "ibus";
@@ -52,13 +54,14 @@ in
     fontDir.enable = true;
     fonts = with pkgs; [
       noto-fonts
-      # noto-fonts-cjk-sans
-      # noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       source-han-sans
       source-han-serif
-      # sarasa-gothic  #更纱黑体
+      sarasa-gothic  #更纱黑体
       source-code-pro
       hack-font
+      fira-code
       jetbrains-mono
        (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     ];
@@ -104,6 +107,9 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
+  environment.gnome.excludePackages = (with pkgs; [
+                gnome-photos
+                gnome-tour]);
   # Enable OpenSSH
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
@@ -207,6 +213,7 @@ in
           enable = true;
           port =6379;
           requirePass="the17th";
+          databases=5;
         };
       };
 
@@ -281,6 +288,7 @@ in
   any-nix-shell
   ibus
   ibus-engines.table-chinese
+  lapce
   libpinyin
   libtorch-bin
   git
@@ -294,6 +302,9 @@ in
   gst_all_1.gstreamer
   home-manager
   htop
+  httpie
+  huniq
+  hyperfine
   jetbrains.clion
   jetbrains.goland
   jetbrains.pycharm-professional
@@ -316,6 +327,7 @@ in
   podman-compose
   podman-desktop
   python3
+  rargs
   redis
   ripgrep
   rocm-core
@@ -323,9 +335,11 @@ in
   rustc
   rustup
   rustfmt
+  texlive.combined.scheme-full
   starship
   tmux
   tokei
+  tldr
   vscode
   wl-clipboard
   wpsoffice
@@ -334,12 +348,10 @@ in
   zoxide
   ];
 
-
   # system version state
   system.stateVersion = "23.05"; # Did you read the comment?
   # nix repo change
   nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
   # Home Manger
   home-manager.useGlobalPkgs = true;
-
 }
