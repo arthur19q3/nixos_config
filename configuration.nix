@@ -172,6 +172,7 @@ in
   users.defaultUserShell = pkgs.fish;
   # programs
   programs.xwayland.enable = true;
+
   programs.clash-verge.enable = true;
   programs.clash-verge.autoStart = true;
     programs.fish ={
@@ -337,6 +338,7 @@ in
   rustfmt
   texlive.combined.scheme-full
   starship
+  rofi
   tmux
   tokei
   tldr
