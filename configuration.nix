@@ -269,6 +269,7 @@ in
   clash
   clash-verge
   discord
+  direnv
   docker
   docker-compose
 #  dragonflydb
