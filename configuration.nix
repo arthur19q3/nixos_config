@@ -21,7 +21,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.plymouth.theme = "bgrt";
-  boot.plymouth.enable = true; 
+  boot.plymouth.enable = true;
   boot.plymouth.logo = pkgs.fetchurl {
             url = "https://nixos.org/logo/nixos-hires.png";
             sha256 = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
@@ -49,7 +49,7 @@ in
       rime
     ];
   };
-  
+
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
@@ -121,7 +121,7 @@ in
 
   # Enable clickhouse
   # services.clickhouse.enable = true;
- 
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   # Disable Passwd for sudo
@@ -256,6 +256,13 @@ in
     '';
   };
 
+
+  # Samba
+  services.gvfs.enable = true;
+  services.samba.enable = true;
+  services.samba.enableNmbd = true;
+
+
   # Package list
   environment.systemPackages = with pkgs; [
   alacritty
@@ -264,6 +271,7 @@ in
   bottom
   broot
   cargo
+  cifs-utils
 #  clickhouse
 #  clickhouse-cli
   clash
@@ -293,8 +301,9 @@ in
   lapce
   libpinyin
   libtorch-bin
+  gnome3.gvfs
   git
-  gitlab
+  gitea
   gcc13
   gccgo13
   glibc
@@ -337,7 +346,8 @@ in
   rustc
   rustup
   rustfmt
-  texlive.combined.scheme-full
+  samba
+  samba4Full
   starship
   rofi
   tmux
