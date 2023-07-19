@@ -337,7 +337,7 @@ in
   podman
   podman-compose
   podman-desktop
-  (python311.withPackages(ps: with ps; [ pandas requests polars numpy]))
+  (python311Full.withPackages(ps: with ps; [ pandas requests polars numpy]))
   rargs
   redis
   ripgrep
@@ -355,6 +355,7 @@ in
   tldr
   vscode
   wl-clipboard
+  wget
   wpsoffice
   xcp
   yarn
