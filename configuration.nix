@@ -337,7 +337,7 @@ in
   podman
   podman-compose
   podman-desktop
-  python3
+  (python311.withPackages(ps: with ps; [ pandas requests polars numpy]))
   rargs
   redis
   ripgrep
